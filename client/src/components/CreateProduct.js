@@ -5,6 +5,8 @@ import axios from "axios";
 
 const CreateProduct = (props) => {
 
+    const { productList, setProductList} = props;
+
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
@@ -21,13 +23,13 @@ const CreateProduct = (props) => {
         {
             console.log(res);
             console.log(res.data);
+            setProductList([...productList, res.data]);
             setTitle("");
             setPrice("");
             setDescription("");
         })
         .catch((err)=> {console.log(err)});
     }
-
 
 
     return(
@@ -53,6 +55,7 @@ const CreateProduct = (props) => {
                     <input onChange={(e) => setDescription(e.target.value)} value={description} name="description" type="text" />
                 </div>
                 <br/>
+                <input className="submit-input" type="submit" value="CREATE" />
             </form>
 
         </div>
