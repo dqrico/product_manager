@@ -8,9 +8,7 @@ const Main = (props) => {
 
     return (
         <div>
-           
             <CreateProduct productList={productList} setProductList={setProductList} />
-                        
             <DisplayAll productList={productList} setProductList={setProductList} />
         </div>
     );

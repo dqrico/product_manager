@@ -31,3 +31,7 @@ header{
 .oneProduct-component{
   margin: 27vh auto; 
 }
+
+a {
+  text-decoration: none;
+}
